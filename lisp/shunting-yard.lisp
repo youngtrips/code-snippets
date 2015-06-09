@@ -56,9 +56,7 @@
                    (when (CHAR= #\( op) (return))
                    (vector-push-extend op output)
                    (setf op (vector-pop ops)))))
-              (t  (vector-push-extend cur output))
-              
-              )))))
+              (t  (vector-push-extend cur output)))))))
 
 (dotimes (cases (read-from-string (read-line)))
   (let ((exp (read-line)))
