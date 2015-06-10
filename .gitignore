@@ -4,3 +4,8 @@
 *.~
 *.pyc
 tags
+test.in
+test.out
+spoj/test.in
+spoj/test.out
+
