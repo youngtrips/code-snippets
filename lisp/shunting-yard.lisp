@@ -29,6 +29,10 @@
     (vector-push-extend (vector-pop ops) output))
   output)
 
+(defun show-rpn-form (v)
+  (do ((i 0 (+ i 1)))
+    ((>= i (length v)) (format t "~%"))
+    (format t "~a" (elt v i))))
 
 (defun shunting-yard (exp)
   (let ((output (make-array 1 :fill-pointer 0 :adjustable t :element-type 'character))
@@ -60,4 +64,4 @@
 
 (dotimes (cases (read-from-string (read-line)))
   (let ((exp (read-line)))
-    (print (shunting-yard exp))))
+    (show-rpn-form (shunting-yard exp))))
